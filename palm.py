@@ -1,16 +1,12 @@
+import os
+os.system('pip install langchain')
+
 from dataclasses import dataclass
 import streamlit as st
 from langchain.chains import LLMChain
 from langchain.llms import GooglePalm
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import PromptTemplate
-import subprocess
-import sys
-
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-install("langchain")
 
 st.set_page_config(page_title="💬 MentalChat")
 
