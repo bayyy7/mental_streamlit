@@ -1,6 +1,3 @@
-import os
-os.system('pip install langchain')
-
 from dataclasses import dataclass
 import streamlit as st
 from langchain.chains import LLMChain
