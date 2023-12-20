@@ -6,6 +6,8 @@ from langchain.memory import ConversationBufferMemory
 from langchain.prompts import PromptTemplate
 import os
 
+api = st.secrets["api_key"]
+
 st.set_page_config(page_title="💬 MentalChat")
 
 with st.sidebar:
@@ -30,7 +32,7 @@ class Message:
 
 @st.cache_resource
 def get_llm() -> GooglePalm:
-    return GooglePalm(model='models/text-bison-001', google_api_key=st.write(st.secrets["api_key"]), temperature=0.5, max_output_tokens=100)
+    return GooglePalm(model='models/text-bison-001', google_api_key=api, temperature=0.5, max_output_tokens=100)
 
 
 def get_llm_chain():
