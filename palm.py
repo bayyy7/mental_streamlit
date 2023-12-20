@@ -30,7 +30,7 @@ class Message:
 
 @st.cache_resource
 def get_llm() -> GooglePalm:
-    return GooglePalm(model='models/text-bison-001', google_api_key=os.environ('api_key'), temperature=0.5, max_output_tokens=100)
+    return GooglePalm(model='models/text-bison-001', google_api_key=st.write(st.secrets["api_key"]), temperature=0.5, max_output_tokens=100)
 
 
 def get_llm_chain():
